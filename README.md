@@ -37,20 +37,26 @@ Nuestra aplicación hará llamadas a la base de datos para las siguientes funcio
 1. SplashScreen (con animación en el drawable).
   <img width="158" alt="image" src="https://github.com/gonzalocmiFP/RetroLife/assets/132547871/fb186458-aac0-4697-9d84-0aa999d40811">
 
+
 2. Actividad para el login.
   <img width="161" alt="image" src="https://github.com/gonzalocmiFP/RetroLife/assets/132547871/829b4ff1-2b6c-4aa1-abd8-1eadff371ec1">
+
 
 3. Actividad para el registro.
   <img width="167" alt="image" src="https://github.com/gonzalocmiFP/RetroLife/assets/132547871/ef74310d-e0f7-4fc9-b323-848777a9ac04">
 
+
 4. RecyclerView (con un "row.xml", una clase "Adaptador", y otra clase "Model").
   <img width="160" alt="image" src="https://github.com/gonzalocmiFP/RetroLife/assets/132547871/195d55f2-9b67-4d40-8453-b3ecb7e0d3b1">
+
 
 5. Actividad para seleccionar y añadir productos al carrito dentro del ReyclerView (aplicando un "onClick" que envíe la posición y una lista con imágenes, nombres y precios de la base de datos, dependiendo del elemento que selecciones en el RecyclerView para poder plasmarlo en un ImageView, TextView...).
   <img width="160" alt="image" src="https://github.com/gonzalocmiFP/RetroLife/assets/132547871/5ab103ff-aba1-4e4e-8719-a37b53fde6b3">
 
+
 6. Actividad para el carrito (lista que vaya cargando elementos añadidos por el usuario).
   <img width="167" alt="image" src="https://github.com/gonzalocmiFP/RetroLife/assets/132547871/86e69feb-c2f5-4733-83cd-2330065a9e13">
+
 
 7. Actividad para el pago e ingreso de dirección de envío.
   <img width="167" alt="image" src="https://github.com/gonzalocmiFP/RetroLife/assets/132547871/e020e2a7-194b-4d84-9aae-a1e51a351795">
