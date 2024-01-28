@@ -1,7 +1,11 @@
 # ¡Bienvenido/a a RetroLife!
 Somos Gonzalo Carrascal, Alejandro Aguado, Diego García y Carlos Benedito, y vamos a presentar nuestra aplicación.
-**RetroLife** se basará en una tienda de artículos vintage online con una extenso catálogo y múltiples funciones. Esta aplicación irá dirigida a un público reducido, el cuál serán personas de una edad superior a los 30 años, que quieran disfrutar y revivir momentos del pasado a través de nuestros productos.
+
+**RetroLife** se basará en una tienda de artículos vintage online con una extenso catálogo y múltiples funciones. 
+Esta aplicación irá dirigida a un público reducido, el cuál serán personas de una edad superior a los 30 años, que quieran disfrutar y revivir momentos del pasado a través de nuestros productos.
+
 El primer diseño de **RetroLife** se puede ver en [Figma](https://www.figma.com/file/bpAjXUWg5DidAo2MKjUhxy/RetroLife?type=design&node-id=0-1&mode=design&t=bubrK2oznE3k72Pf-0).
+
 # Funcionalidades
 **RetroLife** contará con las siguientes funcionalidades:
 1. Registro de usuario.
@@ -14,16 +18,22 @@ El primer diseño de **RetroLife** se puede ver en [Figma](https://www.figma.com
 8. Cerrar sesión.
 # Diseño
 El diseño de **RetroLife** será intuitivo y simple, con la intención de no desviar la atención de los productos y con cierta facilidad de uso.
+
 Nuestro color principal es el blanco, que aporta modernismo y elegancia a la aplicación, y el color secundario es el azul, que transmite confianza y seguridad. El último aspecto es esencial ya que al usar formas de pago en nuestra aplicación, los clientes deben sentirse seguros y confiados al comprar nuestros productos.
+
 **RetroLife** estará desarrollada con un estilo personalizado mediante el empleo de Material3.
+
 # Casos de uso
 Nuestra aplicación hará llamadas a la base de datos para las siguientes funciones:
+
 1. Registrar los usuarios.
 2. En el login, comprobar que los datos introducidos estén en la base de datos.
 3. El catálogo cogerá la lista de productos de la base de datos, y los plasmará en el ReyclerView.
 4. Registrar las direcciones de envios.
+
 # Actividades en Android Studio
 **RetroLife** dispondrá de las siguintes actividades:
+
 1. SplashScreen (con animación en el drawable).
   <img width="158" alt="image" src="https://github.com/gonzalocmiFP/RetroLife/assets/132547871/fb186458-aac0-4697-9d84-0aa999d40811">
 
