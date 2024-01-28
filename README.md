@@ -1,12 +1,13 @@
 # ¡Bienvenido/a a RetroLife!
 Somos Gonzalo Carrascal, Alejandro Aguado, Diego García y Carlos Benedito, y vamos a presentar nuestra aplicación.
-**RetroLife** se basará en una tienda de artículos vintage online con una extenso catálogo y múltiples funciones. Esta aplicación irá dirigida aun público reducido, el cuál serán personas de una edad superior a los 30 años, que quieran disfrutar y revivir momentos del pasado a través de nuestros productos.
+**RetroLife** se basará en una tienda de artículos vintage online con una extenso catálogo y múltiples funciones. Esta aplicación irá dirigida a un público reducido, el cuál serán personas de una edad superior a los 30 años, que quieran disfrutar y revivir momentos del pasado a través de nuestros productos.
+El primer diseño de **RetroLife** se puede ver en [Figma](https://www.figma.com/file/bpAjXUWg5DidAo2MKjUhxy/RetroLife?type=design&node-id=0-1&mode=design&t=bubrK2oznE3k72Pf-0).
 # Funcionalidades
 **RetroLife** contará con las siguientes funcionalidades:
 1. Registro de usuario.
 2. Login de usuario.
 3. Catálogo.
-4. Perfil (Ver mi perfil, mis pedidos, ajustes de cookies, información sobre RetroLife, información legal).
+4. Perfil (ver mi perfil, mis pedidos, ajustes de cookies, información sobre RetroLife, información legal).
 5. Carrito.
 6. Métodos de pago.
 7. Filtro de búsqueda.
