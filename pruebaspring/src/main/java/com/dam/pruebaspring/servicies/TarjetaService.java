@@ -19,4 +19,6 @@ public class TarjetaService {
     public Tarjeta getTarjetaById(Integer id) {
         return tarjetaRepository.findById(id).get();
     }
+
+    public Tarjeta saveTarjeta(Tarjeta tarjeta) {return tarjetaRepository.save(tarjeta);}
 }
