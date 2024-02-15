@@ -4,70 +4,72 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/white"
     tools:context=".Login">
 
-    <com.google.android.material.textfield.TextInputLayout
-        android:id="@+id/usernameLogin"
+    <RelativeLayout
         android:layout_width="322dp"
         android:layout_height="61dp"
         app:layout_constraintBottom_toTopOf="@+id/guideline7"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/guideline6"
-        android:textColorHint="@color/white"
-        app:startIconDrawable="@drawable/ic_persona">
+        app:layout_constraintTop_toTopOf="@+id/guideline10">
 
-        <EditText
-            android:id="@+id/username"
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/usernameLogin"
             android:layout_width="match_parent"
-            android:layout_height="55dp"
-            android:background="@color/principal"
-            android:hint="Usuario"
-            android:inputType="textPersonName" />
-    </com.google.android.material.textfield.TextInputLayout>
+            android:layout_height="match_parent"
+            android:textColorHint="@color/white">
 
-    <androidx.constraintlayout.widget.Guideline
-        android:id="@+id/guideline6"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        app:layout_constraintGuide_percent="0.24213406" />
+            <!-- Aquí puedes agregar el EditText que desees -->
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <TextView
+            android:id="@+id/textView2"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:text="Tus Productos"
+            android:gravity="center"
+            android:background="@drawable/background_rounded"/>
+    </RelativeLayout>
+
+
+    <RelativeLayout
+        android:layout_width="340dp"
+        android:layout_height="0dp"
+        app:layout_constraintBottom_toTopOf="@+id/guideline13"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/guideline7">
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/usernameLogin2"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:textColorHint="@color/white">
+
+            <!-- Aquí puedes agregar el EditText que desees -->
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <TextView
+            android:id="@+id/textView3"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@color/principal"
+            android:text="Tus Productos" />
+    </RelativeLayout>
 
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/guideline7"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
         android:orientation="horizontal"
-        app:layout_constraintGuide_percent="0.37" />
+        app:layout_constraintGuide_end="468dp" />
 
-    <com.google.android.material.textfield.TextInputLayout
-        android:id="@+id/passwordLogin"
-        android:layout_width="322dp"
-        android:layout_height="61dp"
-        android:textColorHint="@color/white"
-        app:layout_constraintBottom_toTopOf="@+id/guideline8"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/guideline12"
-        app:startIconDrawable="@drawable/ic_password">
 
-        <EditText
-            android:id="@+id/password"
-            android:layout_width="match_parent"
-            android:layout_height="55dp"
-            android:background="@color/principal"
-            android:hint="Contraseña"
-            android:inputType="textPersonName"
-            android:textColorHint="@color/principal" />
-    </com.google.android.material.textfield.TextInputLayout>
 
-    <androidx.constraintlayout.widget.Guideline
-        android:id="@+id/guideline8"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        app:layout_constraintGuide_percent="0.5" />
+
 
     <ImageView
         android:id="@+id/imageView"
@@ -93,37 +95,13 @@
         android:orientation="horizontal"
         app:layout_constraintGuide_percent="0.036935706" />
 
-    <androidx.constraintlayout.widget.Guideline
-        android:id="@+id/guideline12"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        app:layout_constraintGuide_percent="0.38440493" />
-
-    <CheckBox
-        android:id="@+id/checkBox"
-        android:layout_width="217dp"
-        android:layout_height="54dp"
-        android:text="Acepto los términos legales"
-        app:buttonTint="@color/black"
-        app:layout_constraintBottom_toTopOf="@+id/guideline13"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/guideline14" />
 
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/guideline13"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
-        app:layout_constraintGuide_percent="0.625171" />
-
-    <androidx.constraintlayout.widget.Guideline
-        android:id="@+id/guideline14"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        app:layout_constraintGuide_percent="0.5294118" />
+        app:layout_constraintGuide_percent="0.71" />
 
     <Button
         android:id="@+id/button"
@@ -137,18 +115,19 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="@+id/guideline13" />
 
+
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/guideline15"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
-        app:layout_constraintGuide_percent="0.7250342" />
+        app:layout_constraintGuide_percent="0.83" />
 
     <Button
         android:id="@+id/cambioRegistro"
         android:layout_width="215dp"
         android:layout_height="54dp"
-        android:text="REGISTRO"
+        android:text="ACEPTAR"
         android:backgroundTint="@color/principal"
         android:textColor="@color/black"
         app:layout_constraintBottom_toTopOf="@+id/guideline16"
@@ -156,11 +135,20 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="@+id/guideline15" />
 
+
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/guideline16"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
-        app:layout_constraintGuide_percent="0.875513" />
+        app:layout_constraintGuide_percent="0.95" />
+
+
+
+
+
+
+
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>
