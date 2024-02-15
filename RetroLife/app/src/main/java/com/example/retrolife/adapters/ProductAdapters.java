@@ -49,7 +49,6 @@ public class ProductAdapters extends RecyclerView.Adapter<ProductAdapters.Produc
         public ProductViewHolder(@NonNull View itemView) {
             super(itemView);
             nameText = itemView.findViewById(R.id.nameText);
-            descriptionText = itemView.findViewById(R.id.descriptionText);
             priceText = itemView.findViewById(R.id.priceText);
         }
 
