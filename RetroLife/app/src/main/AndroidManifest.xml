@@ -18,6 +18,9 @@
         <activity
             android:name=".carrito"
             android:exported="false" />
+           <activity
+            android:name=".envio"
+            android:exported="false" />
         <activity
             android:name=".Registro"
             android:exported="false" />
