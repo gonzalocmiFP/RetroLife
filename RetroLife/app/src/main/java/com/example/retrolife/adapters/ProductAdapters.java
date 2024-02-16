@@ -43,7 +43,6 @@ public class ProductAdapters extends RecyclerView.Adapter<ProductAdapters.Produc
 
     public class ProductViewHolder extends RecyclerView.ViewHolder {
         TextView nameText;
-        TextView descriptionText;
         TextView priceText;
 
         public ProductViewHolder(@NonNull View itemView) {
@@ -54,7 +53,6 @@ public class ProductAdapters extends RecyclerView.Adapter<ProductAdapters.Produc
 
         public void bind(Product product) {
             nameText.setText(product.getNombre());
-            descriptionText.setText(product.getDescripcion());
             priceText.setText(product.getPrecio().toString());
         }
     }

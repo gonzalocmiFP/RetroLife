@@ -8,6 +8,6 @@ import retrofit2.Call;
 import retrofit2.http.GET;
 
 public interface CRUDInterface {
-    @GET ("product/all")
+    @GET ("producto/all")
     Call<List<Product>> getAll();
 }
