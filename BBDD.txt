@@ -1,0 +1,71 @@
+CREATE DATABASE vintage;
+use vintage;
+CREATE TABLE Cliente(
+    Id_cliente Int auto_increment NOT NULL,
+	Nombre_cliente Varchar(30),
+    Contrasena_cliente Varchar(30),
+    Email_cliente Varchar(30),
+    Teléfono_cliente Varchar(30),
+    Primary Key(Id_cliente)
+);
+
+CREATE TABLE Tarjeta(
+    Id_tarjeta Int auto_increment NOT NULL,
+	Numero_tarjeta Varchar(16),
+    Fecha_caducidad Varchar(5),
+    CVV_tarjeta Varchar(3),
+    
+    Id_cliente_tarjeta Int,
+    Primary Key(Id_tarjeta),
+    FOREIGN KEY (Id_cliente_tarjeta) REFERENCES Cliente(Id_cliente)
+);
+
+CREATE TABLE Direccion(
+    Id_direccion Int auto_increment NOT NULL,
+	Codigo_postal Varchar(5),
+    Municipio Varchar(30),
+    Vía Varchar(20),
+    Nombre_vía Varchar(30),
+    Número Int,
+    Portal Varchar(5),
+    Piso Int,
+    Letra Varchar(1),
+    
+    Id_cliente_dirección Int,
+    Primary Key(Id_direccion),
+    FOREIGN KEY (Id_cliente_dirección) REFERENCES Cliente(Id_cliente)
+);
+
+CREATE TABLE Pedido(
+    Id_pedido Int auto_increment NOT NULL,
+    Fecha_entrega Date,
+    Precio_total Double,
+    
+    Id_cliente_pedido Int,
+    Id_tarjeta_pedido Int,
+    Id_direccion_pedido Int,
+    Primary Key(Id_pedido),
+    FOREIGN KEY (Id_cliente_pedido) REFERENCES Cliente(Id_cliente),
+    FOREIGN KEY (Id_tarjeta_pedido) REFERENCES Tarjeta(Id_tarjeta),
+    FOREIGN KEY (Id_direccion_pedido) REFERENCES Direccion(Id_direccion)
+);
+
+CREATE TABLE Producto(
+    Id_producto Int auto_increment NOT NULL,
+    Nombre_producto Varchar(30),
+    Descripcion_producto Varchar(50),
+    Precio_producto Double,
+    
+    Primary Key(Id_producto)
+);
+
+CREATE TABLE Pedido_Producto(
+	Id_producto_pedido Int,
+    Id_pedido_producto Int,
+    
+    FOREIGN KEY (Id_producto_pedido) REFERENCES Producto(Id_producto),
+    FOREIGN KEY (Id_pedido_producto) REFERENCES Pedido(Id_pedido)
+);
+
+
+/*DROP DATABASE vintage;
