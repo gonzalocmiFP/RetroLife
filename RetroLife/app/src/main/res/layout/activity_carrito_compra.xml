@@ -6,33 +6,21 @@
     android:layout_height="match_parent"
     tools:context=".Login">
 
-    <RelativeLayout
-        android:layout_width="322dp"
-        android:layout_height="61dp"
-        app:layout_constraintBottom_toTopOf="@+id/guideline7"
+
+    <TextView
+        android:id="@+id/direccionEnvio2"
+        android:layout_width="176dp"
+        android:layout_height="42dp"
+        android:background="@color/principal"
+        android:gravity="center"
+        android:text="Tus pedidos:"
+        android:textColor="@color/black"
+        app:layout_constraintBottom_toTopOf="@+id/guideline58"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.497"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/guideline10">
-
-        <com.google.android.material.textfield.TextInputLayout
-            android:id="@+id/usernameLogin"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:textColorHint="@color/white">
-
-            <!-- Aquí puedes agregar el EditText que desees -->
-
-        </com.google.android.material.textfield.TextInputLayout>
-
-        <TextView
-            android:id="@+id/textView2"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:text="Tus Productos"
-            android:gravity="center"
-            android:background="@drawable/background_rounded"/>
-    </RelativeLayout>
-
+        app:layout_constraintTop_toTopOf="@+id/guideline57"
+        app:layout_constraintVertical_bias="0.365" />
 
     <RelativeLayout
         android:layout_width="340dp"
@@ -50,14 +38,11 @@
 
             <!-- Aquí puedes agregar el EditText que desees -->
 
+            <androidx.recyclerview.widget.RecyclerView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent" />
         </com.google.android.material.textfield.TextInputLayout>
 
-        <TextView
-            android:id="@+id/textView3"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:background="@color/principal"
-            android:text="Tus Productos" />
     </RelativeLayout>
 
     <androidx.constraintlayout.widget.Guideline
@@ -65,7 +50,7 @@
         android:layout_width="0dp"
         android:layout_height="0dp"
         android:orientation="horizontal"
-        app:layout_constraintGuide_end="468dp" />
+        app:layout_constraintGuide_end="478dp" />
 
 
 
@@ -86,7 +71,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
-        app:layout_constraintGuide_percent="0.2257182" />
+        app:layout_constraintGuide_percent="0.21" />
 
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/guideline11"
@@ -101,7 +86,8 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
-        app:layout_constraintGuide_percent="0.71" />
+        app:layout_constraintGuide_percent="0.72" />
+
 
     <Button
         android:id="@+id/button"
@@ -112,43 +98,38 @@
 
         app:layout_constraintBottom_toTopOf="@+id/guideline15"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/guideline13" />
-
+        app:layout_constraintTop_toTopOf="@+id/guideline56"
+        app:layout_constraintVertical_bias="0.612" />
 
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/guideline15"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
-        app:layout_constraintGuide_percent="0.83" />
-
-    <Button
-        android:id="@+id/cambioRegistro"
-        android:layout_width="215dp"
-        android:layout_height="54dp"
-        android:text="ACEPTAR"
-        android:backgroundTint="@color/principal"
-        android:textColor="@color/black"
-        app:layout_constraintBottom_toTopOf="@+id/guideline16"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/guideline15" />
-
+        app:layout_constraintGuide_percent="0.88" />
 
     <androidx.constraintlayout.widget.Guideline
-        android:id="@+id/guideline16"
+        android:id="@+id/guideline56"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
-        app:layout_constraintGuide_percent="0.95" />
+        app:layout_constraintGuide_begin="544dp" />
 
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline57"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_begin="160dp" />
 
-
-
-
-
-
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline58"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_begin="233dp" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
