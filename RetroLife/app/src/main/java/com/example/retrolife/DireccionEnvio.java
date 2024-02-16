@@ -4,11 +4,11 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
 
-public class envio extends AppCompatActivity {
+public class DireccionEnvio extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_envio);
+        setContentView(R.layout.activity_direccion_envio);
     }
 }

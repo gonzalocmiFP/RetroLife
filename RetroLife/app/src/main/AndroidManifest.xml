@@ -16,10 +16,10 @@
         android:usesCleartextTraffic="true"
         tools:targetApi="31">
         <activity
-            android:name=".carrito"
+            android:name=".CarritoCompra"
             android:exported="false" />
            <activity
-            android:name=".envio"
+            android:name=".DireccionEnvio"
             android:exported="false" />
         <activity
             android:name=".Registro"
