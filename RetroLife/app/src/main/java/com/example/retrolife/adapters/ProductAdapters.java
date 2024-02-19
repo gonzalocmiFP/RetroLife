@@ -53,7 +53,7 @@ public class ProductAdapters extends RecyclerView.Adapter<ProductAdapters.Produc
 
         public void bind(Product product) {
             nameText.setText(product.getNombre());
-            priceText.setText(product.getPrecio().toString());
+            priceText.setText(product.getPrecio().toString() + " €");
         }
     }
 }

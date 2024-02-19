@@ -1,7 +1,10 @@
 package com.example.retrolife;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.View;
+import android.widget.Button;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
@@ -38,6 +41,25 @@ public class Menu extends AppCompatActivity {
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
 
         getAllProducts();
+
+        Button perfil = findViewById(R.id.pasarPerfil);
+        Button carrito = findViewById(R.id.pasarCarrito);
+
+        perfil.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(Menu.this, Perfil.class);
+                startActivity(intent);
+            }
+        });
+
+        carrito.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(Menu.this, CarritoCompra.class);
+                startActivity(intent);
+            }
+        });
     }
 
     private void getAllProducts() {

@@ -17,9 +17,9 @@ public interface CRUDInterface {
     @GET ("producto/all")
     Call<List<Product>> getAll();
 
-
     @POST("cliente/save")
-    Call<Cliente> insertData(@Body Cliente cliente
+    Call<Cliente> insertData(@Body Cliente cliente);
 
-    );
+    @GET("cliente/all")
+    Call<List<Cliente>> getAllClientes();
 }

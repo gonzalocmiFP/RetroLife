@@ -53,12 +53,18 @@ public class Registro extends AppCompatActivity {
                 call.enqueue(new Callback<Cliente>() {
                     @Override
                     public void onResponse(Call<Cliente> call, Response<Cliente> response) {
+                        if(!nombre.isEmpty() && !contrasena.isEmpty() && !email.isEmpty() && !telefono.isEmpty()){
                         if (response.isSuccessful()) {
                             Log.e("Bien: ", "Cliente insertado");
                             Toast.makeText(getApplicationContext(), "Registrado correctamente", Toast.LENGTH_SHORT).show();
+                            Intent intent = new Intent(Registro.this, Menu.class);
+                            startActivity(intent);
                         } else {
                             Log.e("Error: ", "Error al insertar cliente");
                             Log.d("Error: ", response.message());
+                        }
+                        }else{
+                            Toast.makeText(getApplicationContext(), "Campos vacíos", Toast.LENGTH_SHORT).show();
                         }
                     }
 
@@ -67,6 +73,7 @@ public class Registro extends AppCompatActivity {
                         Log.e("Response error: ", t.getMessage());
                     }
                 });
+
             }
         });
     }
