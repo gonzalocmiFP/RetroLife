@@ -1,5 +1,5 @@
 package com.example.retrolife.constants;
 
 public class Constants {
-    public static final String BASE_URL = "http://192.168.129.24:8086/";
+    public static final String BASE_URL = "http://192.168.129.75:8086/";
 }

@@ -20,7 +20,7 @@
         app:layout_constraintTop_toTopOf="@+id/guideline35" />
 
     <com.google.android.material.textfield.TextInputLayout
-        android:id="@+id/telefonoR"
+        android:id="@+id/telefonoRegistro"
         android:layout_width="322dp"
         android:layout_height="61dp"
         android:textColorHint="@color/white"
@@ -31,7 +31,7 @@
         app:startIconDrawable="@drawable/ic_phone">
 
         <EditText
-            android:id="@+id/telefono"
+            android:id="@+id/telefonoR"
             android:layout_width="match_parent"
             android:layout_height="55dp"
             android:background="@color/principal"
