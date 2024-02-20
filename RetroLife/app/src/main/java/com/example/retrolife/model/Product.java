@@ -10,11 +10,14 @@ public class Product {
     private String descripcion;
     private BigDecimal precio;
 
-    public Product(Integer id, String nombre, String descripcion, BigDecimal precio) {
+    private String url;
+
+    public Product(Integer id, String nombre, String descripcion, BigDecimal precio, String url) {
         this.id = id;
         this.nombre = nombre;
         this.descripcion = descripcion;
         this.precio = precio;
+        this.url = url;
     }
 
     public Product() {
@@ -53,9 +56,17 @@ public class Product {
         this.precio = precio;
     }
 
+    public String getUrl() {
+        return url;
+    }
+
+    public void setUrl(String url) {
+        this.url = url;
+    }
+
     @NonNull
     @Override
     public String toString() {
-        return "Id: " + getId() + ", Nombre: " + getNombre() + ", Descripcion: " + getDescripcion() + ", Precio: " + getPrecio();
+        return "Id: " + getId() + ", Nombre: " + getNombre() + ", Descripcion: " + getDescripcion() + ", Precio: " + getPrecio() + ", Url" + getUrl();
     }
 }

@@ -101,7 +101,7 @@
         app:layout_constraintGuide_percent="0.38440493" />
 
     <CheckBox
-        android:id="@+id/checkBox"
+        android:id="@+id/terminosLegales"
         android:layout_width="217dp"
         android:layout_height="54dp"
         android:text="Acepto los términos legales"

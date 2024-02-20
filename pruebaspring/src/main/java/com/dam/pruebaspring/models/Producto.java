@@ -22,4 +22,6 @@ public class Producto {
     private String descripcion;
     @Column(name = "Precio_producto")
     private BigDecimal precio;
+    @Column(name = "Url_producto")
+    private String url;
 }

@@ -55,6 +55,7 @@ CREATE TABLE Producto(
     Nombre_producto Varchar(30),
     Descripcion_producto Varchar(50),
     Precio_producto Double,
+    Url_producto Varchar(255),
     
     Primary Key(Id_producto)
 );

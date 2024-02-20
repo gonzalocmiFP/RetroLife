@@ -26,17 +26,17 @@ INSERT into pedido (Id_pedido, Fecha_entrega, Precio_total, Id_cliente_pedido, I
      (null, '2024-03-16', "12.60", 4, 4, 4),
      (null, '2024-09-11', "82.00", 5, 5, 5);  
      
-INSERT into producto (Id_producto, Nombre_producto, Descripcion_producto, Precio_producto) VALUES
-     (null, "Camiseta Puma", "Camiseta blanca de Puma del año 1992", "15.00"),
-     (null, "Camiseta Jordan", "Camiseta de Jordan del año 1996", "25.00"),
-     (null, "Maquina recreativa", "Máquina arcade del año 2000", "499.99"),
-     (null, "Póster ACP", "Póster de Aterriza comp puedas del año 1985", "10.50"),
-     (null, "Sudadera Nike", "Sudadera Nike del año 2006", "20.00"),
-     (null, "Cámara Nikon", "Cámara Nikon del año 1991", "42.98"),
-     (null, "Zapatillas Converse", "Zapatillas Converse de los años 90", "38.90"),
-     (null, "Nintendo DS", "Consola del año 2001", "18.00"),
+INSERT into producto (Id_producto, Nombre_producto, Descripcion_producto, Precio_producto, Url_producto) VALUES
+     (null, "Camiseta Puma", "Camiseta blanca de Puma del año 1992", "15.00", "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRKM-PQt4feIeb7bCzhcjIkjmZKoifw25wdPg&usqp=CAU"),
+     (null, "Camiseta Jordan", "Camiseta de Jordan del año 1996", "25.00", "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT9VLbx7NDezXhq-25UIGBjClx_Kc75iAmTgg&usqp=CAU"),
+     (null, "Maquina recreativa", "Máquina arcade del año 2000", "499.99", "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT9VLbx7NDezXhq-25UIGBjClx_Kc75iAmTgg&usqp=CAU"),
+     (null, "Póster ACP", "Póster de Aterriza comp puedas del año 1985", "10.50", "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT9VLbx7NDezXhq-25UIGBjClx_Kc75iAmTgg&usqp=CAU"),
+     (null, "Sudadera Nike", "Sudadera Nike del año 2006", "20.00", "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT9VLbx7NDezXhq-25UIGBjClx_Kc75iAmTgg&usqp=CAU"),
+     (null, "Cámara Nikon", "Cámara Nikon del año 1991", "42.98", "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT9VLbx7NDezXhq-25UIGBjClx_Kc75iAmTgg&usqp=CAU"),
+     (null, "Zapatillas Converse", "Zapatillas Converse de los años 90", "38.90", "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT9VLbx7NDezXhq-25UIGBjClx_Kc75iAmTgg&usqp=CAU"),
+     (null, "Nintendo DS", "Consola del año 2001", "18.00", "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT9VLbx7NDezXhq-25UIGBjClx_Kc75iAmTgg&usqp=CAU"),
      (null, "Guantes Charlie", "Guantes de boxeo Charlie del año 1985", "30.00"),
-     (null, "Camiseta Maradona", "Camiseta de Maradona del 1986", "35.95"); 
+     (null, "Camiseta Maradona", "Camiseta de Maradona del 1986", "35.95", "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT9VLbx7NDezXhq-25UIGBjClx_Kc75iAmTgg&usqp=CAU"); 
          
      
 INSERT into pedido_producto (Id_producto_pedido, Id_pedido_producto) VALUES

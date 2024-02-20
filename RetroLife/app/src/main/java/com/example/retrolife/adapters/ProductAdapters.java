@@ -4,6 +4,7 @@ import android.content.Context;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
@@ -11,6 +12,7 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.retrolife.R;
 import com.example.retrolife.model.Product;
+import com.bumptech.glide.Glide;
 
 import java.util.List;
 
@@ -45,13 +47,21 @@ public class ProductAdapters extends RecyclerView.Adapter<ProductAdapters.Produc
         TextView nameText;
         TextView priceText;
 
+        ImageView productView;
+
         public ProductViewHolder(@NonNull View itemView) {
             super(itemView);
             nameText = itemView.findViewById(R.id.nameText);
             priceText = itemView.findViewById(R.id.priceText);
+            productView = itemView.findViewById(R.id.productView);
         }
 
         public void bind(Product product) {
+
+            Glide.with(context)
+                            .load(product.getUrl())
+                                    .into(productView);
+
             nameText.setText(product.getNombre());
             priceText.setText(product.getPrecio().toString() + " €");
         }
