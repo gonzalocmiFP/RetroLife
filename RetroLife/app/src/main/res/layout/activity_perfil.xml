@@ -19,7 +19,7 @@
         app:layout_constraintTop_toTopOf="@+id/guideline40" />
 
     <Button
-        android:id="@+id/button5"
+        android:id="@+id/sobreRetro"
         android:layout_width="173dp"
         android:layout_height="54dp"
         android:backgroundTint="@color/principal"
@@ -31,7 +31,7 @@
         app:layout_constraintTop_toTopOf="@+id/guideline39" />
 
     <Button
-        android:id="@+id/button4"
+        android:id="@+id/infoLegal"
         android:layout_width="173dp"
         android:layout_height="54dp"
         android:backgroundTint="@color/principal"
@@ -43,7 +43,7 @@
         app:layout_constraintTop_toTopOf="@+id/guideline38" />
 
     <Button
-        android:id="@+id/button3"
+        android:id="@+id/BTNcookies"
         android:layout_width="173dp"
         android:layout_height="54dp"
         android:backgroundTint="@color/principal"
@@ -75,7 +75,7 @@
         app:srcCompat="@drawable/ic_persona" />
 
     <TextView
-        android:id="@+id/textView"
+        android:id="@+id/nombrePerfil"
         android:layout_width="136dp"
         android:layout_height="38dp"
         android:gravity="center"

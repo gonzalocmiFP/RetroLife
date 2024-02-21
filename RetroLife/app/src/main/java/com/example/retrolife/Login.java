@@ -1,5 +1,6 @@
 package com.example.retrolife;
 
+import static com.example.retrolife.Perfil.nombreFinal;
 import static com.example.retrolife.constants.Constants.BASE_URL;
 
 import androidx.appcompat.app.AppCompatActivity;
@@ -24,7 +25,9 @@ import retrofit2.Response;
 import retrofit2.Retrofit;
 import retrofit2.converter.gson.GsonConverterFactory;
 
+
 public class Login extends AppCompatActivity {
+
 
     private List<Cliente> clientes;
 
@@ -51,6 +54,7 @@ public class Login extends AppCompatActivity {
             public void onClick(View view) {
                 String nombre = ((EditText) findViewById(R.id.username)).getText().toString();
                 String contrasena = ((EditText) findViewById(R.id.password)).getText().toString();
+                nombreFinal = nombre;
 
                 Retrofit retrofit = new Retrofit.Builder()
                         .baseUrl(BASE_URL)
@@ -62,29 +66,32 @@ public class Login extends AppCompatActivity {
                 call.enqueue(new Callback<List<Cliente>>() {
                     @Override
                     public void onResponse(Call<List<Cliente>> call, Response<List<Cliente>> response) {
+                        if(acepto.isChecked()){
                         if (!nombre.isEmpty() && !contrasena.isEmpty()) {
-
-                        if (response.isSuccessful()) {
-                            List<Cliente> clientes = response.body();
-                            boolean credencialesValidas = false;
-                            for (Cliente cliente : clientes) {
-                                if (cliente.getNombre().equals(nombre) && cliente.getContrasena().equals(contrasena)) {
-                                    credencialesValidas = true;
-                                    break;
+                            if (response.isSuccessful()) {
+                                List<Cliente> clientes = response.body();
+                                boolean credencialesValidas = false;
+                                for (Cliente cliente : clientes) {
+                                    if (cliente.getNombre().equals(nombre) && cliente.getContrasena().equals(contrasena)) {
+                                        credencialesValidas = true;
+                                        break;
+                                    }
                                 }
-                            }
-                            if (credencialesValidas) {
-                                Intent intent = new Intent(Login.this, Menu.class);
-                                startActivity(intent);
-                                Toast.makeText(getApplicationContext(), "Bienvenido", Toast.LENGTH_SHORT).show();
+                                if (credencialesValidas) {
+                                    Intent intent = new Intent(Login.this, Menu.class);
+                                    startActivity(intent);
+                                    Toast.makeText(getApplicationContext(), "Bienvenido", Toast.LENGTH_SHORT).show();
+                                } else {
+                                    Toast.makeText(getApplicationContext(), "Credenciales incorrectas", Toast.LENGTH_SHORT).show();
+                                }
                             } else {
-                                Toast.makeText(getApplicationContext(), "Credenciales incorrectas", Toast.LENGTH_SHORT).show();
+                                Toast.makeText(getApplicationContext(), "Error en la solicitud", Toast.LENGTH_SHORT).show();
                             }
                         } else {
-                            Toast.makeText(getApplicationContext(), "Error en la solicitud", Toast.LENGTH_SHORT).show();
+                            Toast.makeText(getApplicationContext(), "Campos vacios", Toast.LENGTH_SHORT).show();
                         }
                     }else{
-                            Toast.makeText(getApplicationContext(), "Campos vacios", Toast.LENGTH_SHORT).show();
+                            Toast.makeText(getApplicationContext(), "Acepta los términos", Toast.LENGTH_SHORT).show();
                         }
                     }
 

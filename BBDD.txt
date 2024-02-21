@@ -68,5 +68,16 @@ CREATE TABLE Pedido_Producto(
     FOREIGN KEY (Id_pedido_producto) REFERENCES Pedido(Id_pedido)
 );
 
+CREATE TABLE Carrito(
+    Id_carrito Int auto_increment NOT NULL,
+    Id_cliente_carrito Int,
+
+    Nombre_carrito Varchar(50),
+    Precio_carrito Double,
+    
+    Primary Key(Id_carrito),
+    FOREIGN KEY (Id_cliente_carrito) REFERENCES Cliente(Id_cliente)
+);
+
 
 /*DROP DATABASE vintage;

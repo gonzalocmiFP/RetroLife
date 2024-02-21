@@ -1,5 +1,6 @@
 package com.example.retrolife;
 
+import static com.example.retrolife.Perfil.nombreFinal;
 import static com.example.retrolife.constants.Constants.BASE_URL;
 
 import androidx.appcompat.app.AppCompatActivity;
@@ -23,6 +24,7 @@ import retrofit2.converter.gson.GsonConverterFactory;
 
 public class Registro extends AppCompatActivity {
 
+    public static String nombreRegistro;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -46,6 +48,7 @@ public class Registro extends AppCompatActivity {
                 String email = ((EditText) findViewById(R.id.mailR)).getText().toString();
                 String telefono = ((EditText) findViewById(R.id.telefonoR)).getText().toString();
 
+                nombreFinal = nombre;
                 Cliente cliente = new Cliente(nombre, contrasena, email, telefono);
 
                 Call<Cliente> call = crudInterface.insertData(cliente);

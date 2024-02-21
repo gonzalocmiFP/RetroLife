@@ -14,13 +14,14 @@ public class CarritoCompra extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_carrito_compra);
 
-        Button menu = findViewById(R.id.menuCarro);
-        menu.setOnClickListener(new View.OnClickListener() {
+        Button menuCarro = findViewById(R.id.menuCarro);
+        menuCarro.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 Intent intent = new Intent(CarritoCompra.this, Menu.class);
                 startActivity(intent);
             }
         });
+
     }
 }
