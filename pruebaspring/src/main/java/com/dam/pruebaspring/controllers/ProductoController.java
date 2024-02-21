@@ -14,13 +14,13 @@ public class ProductoController {
     private ProductoService productoService;
 
     @GetMapping("/all")
-    public List<Producto> getAllProducts() {
-        return productoService.getAllProducts();
+    public List<Producto> getAllProductos() {
+        return productoService.getAllProductos();
     }
 
     @GetMapping("/by-id/{id}")
-    public Producto getProduct(@PathVariable Integer id) {
-        return productoService.getProductById(id);
+    public Producto getProducto(@PathVariable Integer id) {
+        return productoService.getProductoById(id);
     }
 
     @PostMapping("/save")
