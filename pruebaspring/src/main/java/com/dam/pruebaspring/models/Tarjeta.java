@@ -4,7 +4,7 @@ import jakarta.persistence.*;
 import lombok.*;
 
 @Entity
-@Table(name = "tarjeta") // en name viene el nombre de la tabla en la bbdd
+@Table(name = "tarjeta")
 @NoArgsConstructor
 @AllArgsConstructor
 @Data
