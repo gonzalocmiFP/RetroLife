@@ -1,5 +1,6 @@
 package com.example.retrolife.interfaz;
 
+import com.example.retrolife.model.Carrito;
 import com.example.retrolife.model.Cliente;
 import com.example.retrolife.model.Product;
 
@@ -22,4 +23,7 @@ public interface CRUDInterface {
 
     @GET("cliente/all")
     Call<List<Cliente>> getAllClientes();
+
+    @POST("carrito/save")
+    Call<Carrito> inserCarritoData(@Body Carrito carrito);
 }

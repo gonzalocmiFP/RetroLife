@@ -3,6 +3,9 @@ package com.example.retrolife.model;
 import com.google.gson.annotations.SerializedName;
 
 public class Cliente {
+
+    @SerializedName("id")
+    private int id;
     @SerializedName("nombre")
     private String nombre;
     @SerializedName("contrasena")
@@ -20,6 +23,14 @@ public class Cliente {
     }
 
     public Cliente() {
+    }
+
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
     }
 
     public String getNombre() {

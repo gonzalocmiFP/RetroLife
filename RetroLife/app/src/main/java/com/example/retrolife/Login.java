@@ -31,6 +31,7 @@ public class Login extends AppCompatActivity {
 
     private List<Cliente> clientes;
 
+    public static Integer idCliente;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -73,6 +74,7 @@ public class Login extends AppCompatActivity {
                                 boolean credencialesValidas = false;
                                 for (Cliente cliente : clientes) {
                                     if (cliente.getNombre().equals(nombre) && cliente.getContrasena().equals(contrasena)) {
+                                        idCliente = cliente.getId();
                                         credencialesValidas = true;
                                         break;
                                     }
