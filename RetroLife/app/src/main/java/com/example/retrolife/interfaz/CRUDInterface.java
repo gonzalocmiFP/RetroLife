@@ -8,6 +8,7 @@ import java.util.List;
 
 import retrofit2.Call;
 import retrofit2.http.Body;
+import retrofit2.http.DELETE;
 import retrofit2.http.Field;
 import retrofit2.http.FormUrlEncoded;
 import retrofit2.http.GET;
@@ -24,6 +25,13 @@ public interface CRUDInterface {
     @GET("cliente/all")
     Call<List<Cliente>> getAllClientes();
 
+    @GET("carrito/all")
+    Call<List<Carrito>> getAllCarritos();
+
     @POST("carrito/save")
     Call<Carrito> inserCarritoData(@Body Carrito carrito);
+
+    @DELETE("carrito/delete/{id}")
+    Call<Boolean> deleteCarrito(@Path("id") Integer id);
+
 }

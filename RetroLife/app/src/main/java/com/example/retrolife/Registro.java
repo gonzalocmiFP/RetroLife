@@ -60,7 +60,7 @@ public class Registro extends AppCompatActivity {
                         if (response.isSuccessful()) {
                             Log.e("Bien: ", "Cliente insertado");
                             Toast.makeText(getApplicationContext(), "Registrado correctamente", Toast.LENGTH_SHORT).show();
-                            Intent intent = new Intent(Registro.this, Menu.class);
+                            Intent intent = new Intent(Registro.this, Login.class);
                             startActivity(intent);
                         } else {
                             Log.e("Error: ", "Error al insertar cliente");

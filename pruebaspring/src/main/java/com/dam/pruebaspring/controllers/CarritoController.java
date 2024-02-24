@@ -28,6 +28,6 @@ public class CarritoController {
         return carritoService.saveCarrito(carrito);
     }
 
-    @DeleteMapping("/delete")
+    @DeleteMapping("/delete/{id}")
     public Boolean deleteCarrito(@PathVariable Integer id) {return carritoService.deleteCarrito(id);}
 }

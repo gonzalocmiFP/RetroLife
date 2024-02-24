@@ -8,6 +8,8 @@ public class Carrito {
 
 
     @SerializedName("id")
+    private String idUnico;
+    @SerializedName("idClienteCarrito")
     private String id;
     @SerializedName("nombre")
     private String nombre;
@@ -22,6 +24,15 @@ public class Carrito {
     }
 
     public Carrito() {
+    }
+
+
+    public String getIdUnico() {
+        return idUnico;
+    }
+
+    public void setIdUnico(String idUnico) {
+        this.idUnico = idUnico;
     }
 
     public String getId() {

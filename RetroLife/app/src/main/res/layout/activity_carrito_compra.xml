@@ -4,6 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/white"
     tools:context=".Login">
 
 
@@ -13,8 +14,9 @@
         android:layout_height="42dp"
         android:background="@color/principal"
         android:gravity="center"
-        android:text="Tus pedidos:"
+        android:text="Tus productod:"
         android:textColor="@color/black"
+        android:textSize="16dp"
         app:layout_constraintBottom_toTopOf="@+id/guideline58"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.497"
@@ -23,8 +25,10 @@
         app:layout_constraintVertical_bias="0.365" />
 
     <RelativeLayout
+        android:id="@+id/relativeLayout2"
         android:layout_width="340dp"
-        android:layout_height="0dp"
+        android:layout_height="180dp"
+        android:layout_marginTop="115dp"
         app:layout_constraintBottom_toTopOf="@+id/guideline13"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -39,6 +43,7 @@
             <!-- Aquí puedes agregar el EditText que desees -->
 
             <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/recyclerViewCarrito"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent" />
         </com.google.android.material.textfield.TextInputLayout>
@@ -89,33 +94,12 @@
         app:layout_constraintGuide_percent="0.72" />
 
 
-    <Button
-        android:id="@+id/menuCarro"
-        android:layout_width="108dp"
-        android:layout_height="61dp"
-        android:backgroundTint="@color/white"
-        android:drawableBottom="@drawable/check"
-
-        app:layout_constraintBottom_toTopOf="@+id/guideline15"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.498"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/guideline56"
-        app:layout_constraintVertical_bias="0.612" />
-
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/guideline15"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
-        app:layout_constraintGuide_percent="0.88" />
-
-    <androidx.constraintlayout.widget.Guideline
-        android:id="@+id/guideline56"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        app:layout_constraintGuide_begin="544dp" />
+        app:layout_constraintGuide_percent="0.96" />
 
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/guideline57"
@@ -130,6 +114,47 @@
         android:layout_height="wrap_content"
         android:orientation="horizontal"
         app:layout_constraintGuide_begin="233dp" />
+
+    <TextView
+        android:id="@+id/precioTotal"
+        android:layout_width="137dp"
+        android:layout_height="30dp"
+        android:layout_marginTop="20dp"
+        android:text="Precio"
+        android:textAlignment="center"
+        android:textSize="20dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView2" />
+
+    <TextView
+        android:id="@+id/textView2"
+        android:layout_width="204dp"
+        android:layout_height="33dp"
+        android:text="Precio Total:"
+        android:textAlignment="center"
+        android:textSize="20dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/relativeLayout2" />
+
+    <Button
+        android:id="@+id/menuCarro"
+        android:layout_width="108dp"
+        android:layout_height="61dp"
+        android:backgroundTint="@color/white"
+        android:drawableBottom="@drawable/check"
+
+        app:layout_constraintBottom_toTopOf="@+id/guideline15"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline44"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_begin="537dp" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
