@@ -12,6 +12,8 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.TextView;
+import android.widget.Toast;
+
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 import com.example.retrolife.R;
@@ -80,9 +82,9 @@ public class CarritoAdapter extends RecyclerView.Adapter<CarritoAdapter.CarritoV
                 if (response.isSuccessful()) {
                     Boolean result = response.body();
                     Log.e("Bien:", "Carrito eliminado");
+                    Toast.makeText(context, "Producto eliminado", Toast.LENGTH_SHORT).show();
 
                     carritosFiltrados.remove(position);
-
 
                     carritoAdapter.notifyItemRemoved(position);
                     carritoAdapter.notifyDataSetChanged();

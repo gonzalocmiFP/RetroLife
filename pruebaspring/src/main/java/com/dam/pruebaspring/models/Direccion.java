@@ -18,18 +18,8 @@ public class Direccion {
     private String codigoPostal;
     @Column(name = "Municipio")
     private String municipio;
-    @Column(name = "Vía")
-    private String via;
-    @Column(name = "Nombre_vía")
+    @Column(name = "Nombre_via")
     private String nombreVia;
-    @Column(name = "Número")
-    private Integer numero;
-    @Column(name = "Portal")
-    private String portal;
-    @Column(name = "Piso")
-    private Integer piso;
-    @Column(name = "Letra")
-    private String letra;
-    @Column(name = "Id_cliente_dirección")
+    @Column(name = "Id_cliente_direccion")
     private Integer idClienteDireccion;
 }

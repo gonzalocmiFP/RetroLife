@@ -13,6 +13,7 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.core.content.ContextCompat;
 
 
 public class Perfil extends AppCompatActivity {
@@ -22,6 +23,7 @@ public class Perfil extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_perfil);
+        getWindow().setStatusBarColor(ContextCompat.getColor(this, R.color.principal));
 
         TextView nombrePerfil = findViewById(R.id.nombrePerfil);
         nombrePerfil.setText(nombreFinal);

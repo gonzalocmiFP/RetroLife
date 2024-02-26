@@ -4,6 +4,7 @@ import static com.example.retrolife.Perfil.nombreFinal;
 import static com.example.retrolife.constants.Constants.BASE_URL;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.core.content.ContextCompat;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -13,6 +14,7 @@ import android.widget.CheckBox;
 import android.widget.EditText;
 import android.widget.Toast;
 
+import com.example.retrolife.R.color;
 import com.example.retrolife.interfaz.CRUDInterface;
 import com.example.retrolife.model.Cliente;
 import com.example.retrolife.model.Product;
@@ -36,6 +38,8 @@ public class Login extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
+
+        getWindow().setStatusBarColor(ContextCompat.getColor(this, color.principal));
         CheckBox acepto = findViewById(R.id.terminosLegales);
 
         Button registro = findViewById(R.id.cambioRegistro);

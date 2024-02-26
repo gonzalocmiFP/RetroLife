@@ -2,6 +2,7 @@ package com.example.retrolife.interfaz;
 
 import com.example.retrolife.model.Carrito;
 import com.example.retrolife.model.Cliente;
+import com.example.retrolife.model.Direccion;
 import com.example.retrolife.model.Product;
 
 import java.util.List;
@@ -33,5 +34,8 @@ public interface CRUDInterface {
 
     @DELETE("carrito/delete/{id}")
     Call<Boolean> deleteCarrito(@Path("id") Integer id);
+
+    @POST("direccion/save")
+    Call<Direccion> insertDireccionData(@Body Direccion direccion);
 
 }

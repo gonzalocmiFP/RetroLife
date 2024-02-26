@@ -20,6 +20,6 @@ public class Cliente {
     private String contrasena;
     @Column(name = "Email_cliente")
     private String email;
-    @Column(name = "Teléfono_cliente")
+    @Column(name = "Telefono_cliente")
     private String telefono;
 }

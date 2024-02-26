@@ -7,7 +7,7 @@
     android:background="@color/white">
 
     <Button
-        android:id="@+id/button9"
+        android:id="@+id/insertarDireccion"
         android:layout_width="108dp"
         android:layout_height="61dp"
         android:backgroundTint="@color/white"
@@ -219,7 +219,7 @@
         app:layout_constraintGuide_begin="600dp" />
 
     <Button
-        android:id="@+id/button7"
+        android:id="@+id/paypal"
         android:layout_width="127dp"
         android:layout_height="51dp"
         android:text="PayPal"
@@ -234,7 +234,7 @@
         app:layout_constraintVertical_bias="0.6" />
 
     <Button
-        android:id="@+id/button8"
+        android:id="@+id/tarjeta"
         android:layout_width="127dp"
         android:layout_height="51dp"
         android:text="Tarjeta"
@@ -253,7 +253,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
-        app:layout_constraintGuide_begin="613dp" />
+        app:layout_constraintGuide_begin="603dp" />
 
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/guideline60"

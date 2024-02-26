@@ -67,11 +67,11 @@
                 <Button
                     android:id="@+id/eliminarCarrito"
                     android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
+                    android:layout_height="40dp"
                     android:layout_weight="1"
-                    android:text="Eliminar"
+                    android:drawableBottom="@drawable/ic_basura"
                     android:backgroundTint="@color/principal"
-                    android:textSize="16dp" />
+                     />
             </LinearLayout>
         </LinearLayout>
 

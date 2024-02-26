@@ -5,7 +5,7 @@ CREATE TABLE Cliente(
 	Nombre_cliente Varchar(30),
     Contrasena_cliente Varchar(30),
     Email_cliente Varchar(30),
-    Teléfono_cliente Varchar(30),
+    Telefono_cliente Varchar(30),
     Primary Key(Id_cliente)
 );
 
@@ -24,16 +24,12 @@ CREATE TABLE Direccion(
     Id_direccion Int auto_increment NOT NULL,
 	Codigo_postal Varchar(5),
     Municipio Varchar(30),
-    Vía Varchar(20),
-    Nombre_vía Varchar(30),
-    Número Int,
-    Portal Varchar(5),
-    Piso Int,
-    Letra Varchar(1),
+    Nombre_via Varchar(30),
     
-    Id_cliente_dirección Int,
+    
+    Id_cliente_direccion Int,
     Primary Key(Id_direccion),
-    FOREIGN KEY (Id_cliente_dirección) REFERENCES Cliente(Id_cliente)
+    FOREIGN KEY (Id_cliente_direccion) REFERENCES Cliente(Id_cliente)
 );
 
 CREATE TABLE Pedido(

@@ -14,7 +14,7 @@
         android:layout_height="42dp"
         android:background="@color/principal"
         android:gravity="center"
-        android:text="Tus productod:"
+        android:text="Tus productos:"
         android:textColor="@color/black"
         android:textSize="16dp"
         app:layout_constraintBottom_toTopOf="@+id/guideline58"
@@ -40,12 +40,18 @@
             android:layout_height="match_parent"
             android:textColorHint="@color/white">
 
-            <!-- Aquí puedes agregar el EditText que desees -->
 
             <androidx.recyclerview.widget.RecyclerView
                 android:id="@+id/recyclerViewCarrito"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent" />
+
+            <androidx.constraintlayout.widget.Guideline
+                android:id="@+id/guideline43"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:orientation="horizontal" />
         </com.google.android.material.textfield.TextInputLayout>
 
     </RelativeLayout>
@@ -56,9 +62,6 @@
         android:layout_height="0dp"
         android:orientation="horizontal"
         app:layout_constraintGuide_end="478dp" />
-
-
-
 
 
     <ImageView
@@ -91,7 +94,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
-        app:layout_constraintGuide_percent="0.72" />
+        app:layout_constraintGuide_percent="0.62" />
 
 
     <androidx.constraintlayout.widget.Guideline
@@ -119,7 +122,7 @@
         android:id="@+id/precioTotal"
         android:layout_width="137dp"
         android:layout_height="30dp"
-        android:layout_marginTop="20dp"
+        android:layout_marginTop="24dp"
         android:text="Precio"
         android:textAlignment="center"
         android:textSize="20dp"
@@ -136,7 +139,7 @@
         android:textSize="20dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/relativeLayout2" />
+        app:layout_constraintTop_toTopOf="@+id/guideline44" />
 
     <Button
         android:id="@+id/menuCarro"
@@ -154,7 +157,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
-        app:layout_constraintGuide_begin="537dp" />
+        app:layout_constraintGuide_begin="509dp" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

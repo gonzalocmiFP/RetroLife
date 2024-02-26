@@ -22,7 +22,7 @@ tools:context=".Menu">
         android:layout_width="50dp"
         android:layout_height="52dp"
         android:layout_alignParentRight="true"
-        android:layout_marginTop="108dp"
+        android:layout_marginTop="120dp"
         android:layout_marginRight="20dp"
         android:backgroundTint="@color/white"
         android:drawableBottom="@drawable/ic_usuario"
@@ -34,7 +34,7 @@ tools:context=".Menu">
         android:layout_width="54dp"
         android:layout_height="53dp"
         android:layout_alignParentRight="true"
-        android:layout_marginTop="100dp"
+        android:layout_marginTop="112dp"
         android:layout_marginRight="72dp"
         android:backgroundTint="@color/white"
         android:drawableBottom="@drawable/ic_carrito"
@@ -45,8 +45,28 @@ tools:context=".Menu">
         android:id="@+id/recyclerView"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_marginTop="150dp">
+        android:layout_marginTop="160dp">
 
     </androidx.recyclerview.widget.RecyclerView>
+
+    <EditText
+        android:id="@+id/filtrarProductos"
+        android:layout_width="245dp"
+        android:layout_height="32dp"
+        android:layout_marginLeft="26dp"
+        android:layout_marginTop="122dp"
+        android:background="@drawable/bordes"
+        android:paddingStart="36dp"
+        android:ems="10"
+        android:inputType="text"
+        android:hint="Filtrar" />
+
+    <ImageView
+        android:id="@+id/imageView9"
+        android:layout_width="26dp"
+        android:layout_height="27dp"
+        android:layout_marginLeft="30dp"
+        android:layout_marginTop="125dp"
+        app:srcCompat="@drawable/lupa" />
 
 </RelativeLayout>

@@ -4,6 +4,7 @@ import static com.example.retrolife.Perfil.nombreFinal;
 import static com.example.retrolife.constants.Constants.BASE_URL;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.core.content.ContextCompat;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -30,6 +31,7 @@ public class Registro extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_registro);
+        getWindow().setStatusBarColor(ContextCompat.getColor(this, R.color.principal));
 
         Button menu = findViewById(R.id.pasarMenu);
 

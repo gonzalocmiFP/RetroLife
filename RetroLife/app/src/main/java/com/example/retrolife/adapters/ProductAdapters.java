@@ -84,6 +84,7 @@ public class ProductAdapters extends RecyclerView.Adapter<ProductAdapters.Produc
             public void onResponse(Call<Carrito> call, Response<Carrito> response) {
                 if (response.isSuccessful()) {
                     Log.e("Bien: ", "Producto insertado");
+                    Toast.makeText(context, "Producto añadido", Toast.LENGTH_SHORT).show();
                     Log.e("Id: ", String.valueOf(idClienteCarrito));
 
                 } else {

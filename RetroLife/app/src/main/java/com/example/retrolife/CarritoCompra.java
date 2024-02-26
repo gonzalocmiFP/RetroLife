@@ -4,6 +4,7 @@ import static com.example.retrolife.Login.idCliente;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.core.content.ContextCompat;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
@@ -13,6 +14,7 @@ import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.example.retrolife.adapters.CarritoAdapter;
 import com.example.retrolife.adapters.ProductAdapters;
@@ -34,6 +36,7 @@ import retrofit2.converter.gson.GsonConverterFactory;
 
 public class CarritoCompra extends AppCompatActivity {
 
+
     private List<Carrito> carritos;
     private CRUDInterface crudInterface;
     private RecyclerView recyclerView;
@@ -50,6 +53,7 @@ public class CarritoCompra extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_carrito_compra);
 
+        getWindow().setStatusBarColor(ContextCompat.getColor(this, R.color.principal));
         recyclerView = findViewById(R.id.recyclerViewCarrito);
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
 
@@ -60,8 +64,13 @@ public class CarritoCompra extends AppCompatActivity {
         menuCarro.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(CarritoCompra.this, Menu.class);
-                startActivity(intent);
+                if(precioTotal.compareTo(BigDecimal.ZERO) != 0){
+                    Intent intent = new Intent(CarritoCompra.this, DireccionEnvio.class);
+                    startActivity(intent);
+                }else{
+                    Toast.makeText(getApplicationContext(), "Añade algo al carrito", Toast.LENGTH_SHORT).show();
+                }
+
             }
         });
 
@@ -81,16 +90,18 @@ public class CarritoCompra extends AppCompatActivity {
             public void onResponse(@NonNull Call<List<Carrito>> call, @NonNull Response<List<Carrito>> response) {
                 if (response.isSuccessful()) {
                     carritos = response.body();
-
+                    carritosFiltrados.clear();
+                    precioTotal = BigDecimal.valueOf(0);
 
                     for (Carrito carrito : carritos) {
                         if (carrito.getId().toString().equals(idCliente.toString())) {
                             carritosFiltrados.add(carrito);
                             precioTotal = precioTotal.add(carrito.getPrecio());
+                        }
                     }
-                }
+
                     precioCarrito = findViewById(R.id.precioTotal);
-                    precioCarrito.setText(String.valueOf(precioTotal) + " €"); //
+                    precioCarrito.setText(String.valueOf(precioTotal) + " €");
                     carritoAdapter = new CarritoAdapter(carritosFiltrados, CarritoCompra.this);
                     recyclerView.setAdapter(carritoAdapter);
                 } else {
