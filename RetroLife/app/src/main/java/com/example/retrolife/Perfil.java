@@ -62,7 +62,7 @@ public class Perfil extends AppCompatActivity {
         });
     }
     private void infoLegal(){
-        new AlertDialog.Builder(this)
+        new AlertDialog.Builder(this, R.style.CustomAlertDialogStyle)
                 .setTitle("Información legal")
                 .setMessage("De acuerdo con lo dispuesto en el artículo 10 de la Ley 34/2002, de 11 de julio, de Servicios de la Sociedad de la Información y de Comercio Electrónico (“LSSI”), ponemos en su conocimiento que la aplicación Alertas Normativas Financieras (la “App”) es una aplicación operada por GMS Management Solutions, S.L. (en adelante, “MS”o “Management Solutions”, indistintamente), con C.I.F. B-83509307, inscrita en el Registro Mercantil de Madrid (España), Tomo 18.271, Folio 219, Sección 8ª, Hoja M-316664, cuyo domicilio se encuentra en la Plaza Pablo Ruiz Picasso, 1, Torre Picasso, 28020, Madrid, España. Puede obtener más información sobre cómo ponerse en contacto con nosotros a través de la sección “Donde estamos” de nuestra página web.\n" +
                         "\n" +
@@ -83,7 +83,7 @@ public class Perfil extends AppCompatActivity {
     }
 
     private void cookies(){
-        new AlertDialog.Builder(this)
+        new AlertDialog.Builder(this, R.style.CustomAlertDialogStyle)
                 .setTitle("Cookies")
                 .setMessage("Los sitios web y los servicios online pueden usar «cookies». Las cookies te permiten comprar mediante el carrito y personalizar los sitios, y a nosotros nos permiten saber qué páginas visitan los clientes. Nos ayudan a medir la eficacia de los anuncios y búsquedas, y nos dan información sobre el comportamiento de los usuarios, que utilizamos para mejorar nuestros productos y mensajes.\n" +
                         "\n" +
@@ -108,7 +108,7 @@ public class Perfil extends AppCompatActivity {
     }
 
     private void sobreRetro(){
-        new AlertDialog.Builder(this)
+        new AlertDialog.Builder(this, R.style.CustomAlertDialogStyle)
                 .setTitle("Sobre Retrolife")
                 .setMessage("La mejor app del mundo")
                 .setPositiveButton(android.R.string.yes, new DialogInterface.OnClickListener() {

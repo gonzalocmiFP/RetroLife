@@ -4,6 +4,7 @@ import com.example.retrolife.model.Carrito;
 import com.example.retrolife.model.Cliente;
 import com.example.retrolife.model.Direccion;
 import com.example.retrolife.model.Product;
+import com.example.retrolife.model.Tarjeta;
 
 import java.util.List;
 
@@ -37,5 +38,8 @@ public interface CRUDInterface {
 
     @POST("direccion/save")
     Call<Direccion> insertDireccionData(@Body Direccion direccion);
+
+    @POST("tarjeta/save")
+    Call<Tarjeta> insertTarjetaData(@Body Tarjeta tarjeta);
 
 }

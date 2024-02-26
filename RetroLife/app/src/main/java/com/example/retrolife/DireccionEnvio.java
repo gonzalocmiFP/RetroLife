@@ -20,6 +20,7 @@ import android.widget.Toast;
 import com.example.retrolife.interfaz.CRUDInterface;
 import com.example.retrolife.model.Cliente;
 import com.example.retrolife.model.Direccion;
+import com.example.retrolife.model.Tarjeta;
 
 import retrofit2.Call;
 import retrofit2.Callback;
@@ -28,6 +29,9 @@ import retrofit2.Retrofit;
 import retrofit2.converter.gson.GsonConverterFactory;
 
 public class DireccionEnvio extends AppCompatActivity {
+
+    public static boolean tarjetaInsert = false;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -73,6 +77,8 @@ public class DireccionEnvio extends AppCompatActivity {
 
                 Direccion direccion = new Direccion(codigoPostal, municipio, nombreVia, id_cliente_direccion);
 
+                if(tarjetaInsert == true){
+
                 Call<Direccion> call = crudInterface.insertDireccionData(direccion);
 
                 call.enqueue(new Callback<Direccion>() {
@@ -80,9 +86,11 @@ public class DireccionEnvio extends AppCompatActivity {
                     public void onResponse(Call<Direccion> call, Response<Direccion> response) {
                         if(!codigoPostal.isEmpty() && !municipio.isEmpty() && !nombreVia.isEmpty()){
                             if(response.isSuccessful()){
-                                Toast.makeText(getApplicationContext(), "Direccion correcta", Toast.LENGTH_SHORT).show();
+                                Toast.makeText(getApplicationContext(), "Gracias por su compra", Toast.LENGTH_SHORT).show();
+
                                 Intent intent = new Intent(DireccionEnvio.this, Menu.class);
                                 startActivity(intent);
+
                             }else{
                                 Toast.makeText(getApplicationContext(), "Error al insertar direccion", Toast.LENGTH_SHORT).show();
                             }
@@ -97,6 +105,9 @@ public class DireccionEnvio extends AppCompatActivity {
 
                     }
                 });
+                }else{
+                    Toast.makeText(getApplicationContext(), "Seleccione un metodo de pago", Toast.LENGTH_SHORT).show();
+                }
             }
         });
     }
@@ -132,6 +143,50 @@ public class DireccionEnvio extends AppCompatActivity {
                         String numeroTarjeta = editText1.getText().toString();
                         String fechaExpiracion = editText2.getText().toString();
                         String cvv = editText3.getText().toString();
+                        String idClienteTarjeta = String.valueOf(idCliente);
+                        Log.e("numero: " , numeroTarjeta);
+
+                        Retrofit retrofit = new Retrofit.Builder()
+                                .baseUrl(BASE_URL)
+                                .addConverterFactory(GsonConverterFactory.create())
+                                .build();
+
+                        CRUDInterface crudInterface = retrofit.create(CRUDInterface.class);
+                        Tarjeta tarjeta = new Tarjeta(numeroTarjeta, fechaExpiracion, cvv, idClienteTarjeta);
+                        if(tarjetaInsert == false) {
+
+
+                            Call<Tarjeta> call = crudInterface.insertTarjetaData(tarjeta);
+
+                            call.enqueue(new Callback<Tarjeta>() {
+                                @Override
+                                public void onResponse(Call<Tarjeta> call, Response<Tarjeta> response) {
+
+                                    if (!numeroTarjeta.isEmpty() && !fechaExpiracion.isEmpty() && !cvv.isEmpty()) {
+                                        if (response.isSuccessful()) {
+                                            tarjetaInsert = true;
+                                            Log.e("Bien: ", "Tarjeta insertada");
+                                            Toast.makeText(getApplicationContext(), "Tarjeta insertada", Toast.LENGTH_SHORT).show();
+
+                                        } else {
+                                            Log.e("Error: ", "Error al insertar tarjeta");
+                                            Log.d("Error: ", response.message());
+                                        }
+
+                                    } else {
+                                        Toast.makeText(getApplicationContext(), "Campos vacíos", Toast.LENGTH_SHORT).show();
+                                    }
+
+                                }
+
+                                @Override
+                                public void onFailure(Call<Tarjeta> call, Throwable t) {
+
+                                }
+                            });
+                        }else{
+                            Toast.makeText(getApplicationContext(), "Ya hay un metodo de pago seleccionado", Toast.LENGTH_SHORT).show();
+                        }
 
                     }
                 })
@@ -176,6 +231,50 @@ public class DireccionEnvio extends AppCompatActivity {
                         String numeroTarjeta = editText1.getText().toString();
                         String fechaExpiracion = editText2.getText().toString();
                         String cvv = editText3.getText().toString();
+                        String idClienteTarjeta = String.valueOf(idCliente);
+
+
+                        Retrofit retrofit = new Retrofit.Builder()
+                                .baseUrl(BASE_URL)
+                                .addConverterFactory(GsonConverterFactory.create())
+                                .build();
+
+                        CRUDInterface crudInterface = retrofit.create(CRUDInterface.class);
+                        Tarjeta tarjeta = new Tarjeta(numeroTarjeta, fechaExpiracion, cvv, idClienteTarjeta);
+                        if(tarjetaInsert == false) {
+
+
+                            Call<Tarjeta> call = crudInterface.insertTarjetaData(tarjeta);
+
+                            call.enqueue(new Callback<Tarjeta>() {
+                                @Override
+                                public void onResponse(Call<Tarjeta> call, Response<Tarjeta> response) {
+
+                                    if (!numeroTarjeta.isEmpty() && !fechaExpiracion.isEmpty() && !cvv.isEmpty()) {
+                                        if (response.isSuccessful()) {
+                                            tarjetaInsert = true;
+                                            Log.e("Bien: ", "Tarjeta insertada");
+                                            Toast.makeText(getApplicationContext(), "Tarjeta insertada", Toast.LENGTH_SHORT).show();
+
+                                        } else {
+                                            Log.e("Error: ", "Error al insertar tarjeta");
+                                            Log.d("Error: ", response.message());
+                                        }
+
+                                    } else {
+                                        Toast.makeText(getApplicationContext(), "Campos vacíos", Toast.LENGTH_SHORT).show();
+                                    }
+
+                                }
+
+                                @Override
+                                public void onFailure(Call<Tarjeta> call, Throwable t) {
+
+                                }
+                            });
+                        }else{
+                            Toast.makeText(getApplicationContext(), "Ya hay un metodo de pago seleccionado", Toast.LENGTH_SHORT).show();
+                        }
 
                     }
                 })
