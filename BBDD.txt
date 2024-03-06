@@ -51,14 +51,15 @@ CREATE TABLE Producto(
     Nombre_producto Varchar(30),
     Descripcion_producto Varchar(50),
     Precio_producto Double,
-    Url_producto Varchar(255),
+    Url_producto Varchar(255)
+    Categoría_producto Varchar(50),
     
     Primary Key(Id_producto)
 );
 
 CREATE TABLE Pedido_Producto(
 	Id_producto_pedido Int,
-    Id_pedido_producto Int,
+    	Id_pedido_producto Int,
     
     FOREIGN KEY (Id_producto_pedido) REFERENCES Producto(Id_producto),
     FOREIGN KEY (Id_pedido_producto) REFERENCES Pedido(Id_pedido)
