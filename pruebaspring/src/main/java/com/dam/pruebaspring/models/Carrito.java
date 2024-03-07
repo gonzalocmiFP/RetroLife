@@ -22,4 +22,6 @@ public class Carrito {
     private String nombre;
     @Column(name = "Precio_carrito")
     private BigDecimal precio;
+    @Column(name = "cantidad_carrito")
+    private Integer cantidad;
 }

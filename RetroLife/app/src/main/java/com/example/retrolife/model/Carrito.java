@@ -16,11 +16,14 @@ public class Carrito {
 
     @SerializedName("precio")
     private BigDecimal precio;
+    @SerializedName("cantidad")
+    private Integer cantidad;
 
-    public Carrito(String id, String nombre, BigDecimal precio) {
+    public Carrito(String id, String nombre, BigDecimal precio, Integer cantidad) {
         this.nombre = nombre;
         this.precio = precio;
         this.id = id;
+        this.cantidad = cantidad;
     }
 
     public Carrito() {
@@ -58,4 +61,13 @@ public class Carrito {
     public void setPrecio(BigDecimal precio) {
         this.precio = precio;
     }
+
+    public Integer getcantidad() {
+        return cantidad;
+    }
+
+    public void setcantidad(Integer cantidad) {
+        this.cantidad += cantidad;
+    }
+
 }

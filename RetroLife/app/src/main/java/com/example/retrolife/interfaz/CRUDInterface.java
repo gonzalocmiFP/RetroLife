@@ -42,4 +42,6 @@ public interface CRUDInterface {
     @POST("tarjeta/save")
     Call<Tarjeta> insertTarjetaData(@Body Tarjeta tarjeta);
 
+
+
 }

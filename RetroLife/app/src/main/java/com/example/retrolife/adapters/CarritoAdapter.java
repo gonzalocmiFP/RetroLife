@@ -16,11 +16,12 @@ import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
+
+import com.example.retrolife.CarritoCompra;
 import com.example.retrolife.R;
 import com.example.retrolife.constants.Constants;
 import com.example.retrolife.interfaz.CRUDInterface;
 import com.example.retrolife.model.Carrito;
-
 
 import java.util.List;
 
@@ -31,9 +32,9 @@ import retrofit2.Response;
 import retrofit2.Retrofit;
 import retrofit2.converter.gson.GsonConverterFactory;
 
-public class CarritoAdapter extends RecyclerView.Adapter<CarritoAdapter.CarritoViewHolder> implements View.OnClickListener{
+public class
+CarritoAdapter extends RecyclerView.Adapter<CarritoAdapter.CarritoViewHolder> implements View.OnClickListener {
     private List<Carrito> carritos;
-
     private CRUDInterface crudInterface;
     private Context context;
 
@@ -55,19 +56,24 @@ public class CarritoAdapter extends RecyclerView.Adapter<CarritoAdapter.CarritoV
         holder.bind(carrito);
         holder.eliminarCarrito.setTag(position);
         holder.eliminarCarrito.setOnClickListener(this);
-
-
     }
 
     @Override
     public void onClick(View view) {
-
         int position = (int) view.getTag();
-
         Carrito carritoAEliminar = carritosFiltrados.get(position);
+        String nombreProductoAEliminar = carritoAEliminar.getNombre();
+
+        for (int i = carritosFiltrados.size() - 1; i >= 0; i--) {
+            Carrito carrito = carritosFiltrados.get(i);
+            if (carrito.getNombre().equals(nombreProductoAEliminar)) {
+                carritosFiltrados.remove(i);
+                notifyItemRemoved(i);
+                precioTotal = precioTotal.subtract(carrito.getPrecio());
+            }
+        }
 
         Integer idCarritoAEliminar = Integer.valueOf(carritoAEliminar.getIdUnico());
-
         OkHttpClient.Builder httpClient = new OkHttpClient.Builder();
         Retrofit retrofit = new Retrofit.Builder()
                 .baseUrl(Constants.BASE_URL)
@@ -83,26 +89,18 @@ public class CarritoAdapter extends RecyclerView.Adapter<CarritoAdapter.CarritoV
                     Boolean result = response.body();
                     Log.e("Bien:", "Carrito eliminado");
                     Toast.makeText(context, "Producto eliminado", Toast.LENGTH_SHORT).show();
-
-                    carritosFiltrados.remove(position);
-
-                    carritoAdapter.notifyItemRemoved(position);
-                    carritoAdapter.notifyDataSetChanged();
-
-                    precioTotal = precioTotal.subtract(carritoAEliminar.getPrecio());
-
-                    precioCarrito.setText(precioTotal + "€");
-
-
-                }else{
-                    Log.e("Mal: ", "Mal");
-
+                    if (precioCarrito != null) {
+                        precioCarrito.setText(precioTotal + "€");
+                    }
+                    ((CarritoCompra) context).getAllCarritos();
+                } else {
+                    Log.e("Mal: ", "Error al eliminar el carrito");
                 }
             }
 
             @Override
             public void onFailure(Call<Boolean> call, Throwable t) {
-
+                Log.e("Error: ", t.getMessage());
             }
         });
     }
@@ -112,25 +110,25 @@ public class CarritoAdapter extends RecyclerView.Adapter<CarritoAdapter.CarritoV
         return carritos.size();
     }
 
-
     public class CarritoViewHolder extends RecyclerView.ViewHolder {
         TextView nombreCarrito;
         TextView precioCarrito;
-
         Button eliminarCarrito;
-
+        TextView cantidadproducto;
 
         public CarritoViewHolder(@NonNull View itemView) {
             super(itemView);
             nombreCarrito = itemView.findViewById(R.id.nombreCarrito);
             precioCarrito = itemView.findViewById(R.id.precioCarrito);
             eliminarCarrito = itemView.findViewById(R.id.eliminarCarrito);
+            cantidadproducto = itemView.findViewById(R.id.cantidadproducto);
         }
 
         public void bind(Carrito carrito) {
-
             nombreCarrito.setText(carrito.getNombre());
             precioCarrito.setText(carrito.getPrecio().toString() + " €");
+            cantidadproducto.setText(String.valueOf(carrito.getcantidad()));
         }
     }
 }
+

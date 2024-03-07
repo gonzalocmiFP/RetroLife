@@ -17,11 +17,9 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.example.retrolife.adapters.CarritoAdapter;
-import com.example.retrolife.adapters.ProductAdapters;
 import com.example.retrolife.constants.Constants;
 import com.example.retrolife.interfaz.CRUDInterface;
 import com.example.retrolife.model.Carrito;
-import com.example.retrolife.model.Product;
 
 import java.math.BigDecimal;
 import java.util.ArrayList;
@@ -36,14 +34,12 @@ import retrofit2.converter.gson.GsonConverterFactory;
 
 public class CarritoCompra extends AppCompatActivity {
 
-
     private List<Carrito> carritos;
     private CRUDInterface crudInterface;
     private RecyclerView recyclerView;
     public static CarritoAdapter carritoAdapter;
 
-    public static  List<Carrito> carritosFiltrados = new ArrayList<>();
-
+    public static List<Carrito> carritosFiltrados = new ArrayList<>();
     public static BigDecimal precioTotal = BigDecimal.valueOf(0);
     public static TextView precioCarrito;
 
@@ -57,26 +53,26 @@ public class CarritoCompra extends AppCompatActivity {
         recyclerView = findViewById(R.id.recyclerViewCarrito);
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
 
-        getAllCarritos();
+        // Inicializar precioCarrito
 
+
+        getAllCarritos();
 
         Button menuCarro = findViewById(R.id.menuCarro);
         menuCarro.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                if(precioTotal.compareTo(BigDecimal.ZERO) != 0){
+                if (precioTotal.compareTo(BigDecimal.ZERO) != 0) {
                     Intent intent = new Intent(CarritoCompra.this, DireccionEnvio.class);
                     startActivity(intent);
-                }else{
+                } else {
                     Toast.makeText(getApplicationContext(), "Añade algo al carrito", Toast.LENGTH_SHORT).show();
                 }
-
             }
         });
-
     }
 
-    private void getAllCarritos() {
+    public void getAllCarritos() {
         OkHttpClient.Builder httpClient = new OkHttpClient.Builder();
         Retrofit retrofit = new Retrofit.Builder()
                 .baseUrl(Constants.BASE_URL)
@@ -94,14 +90,31 @@ public class CarritoCompra extends AppCompatActivity {
                     precioTotal = BigDecimal.valueOf(0);
 
                     for (Carrito carrito : carritos) {
-                        if (carrito.getId().toString().equals(idCliente.toString())) {
+                        boolean encontrado = false;
+                        for (Carrito carritoFiltrado : carritosFiltrados) {
+                            if (carrito.getNombre().equals(carritoFiltrado.getNombre())) {
+                                // Producto encontrado, actualiza la cantidad y el precio
+                                carritoFiltrado.setcantidad(+1);
+                                carritoFiltrado.setPrecio(carritoFiltrado.getPrecio().add(carrito.getPrecio()));
+                                encontrado = true;
+                                break;
+                            }
+                        }
+                        if (!encontrado && carrito.getId().toString().equals(idCliente.toString())) {
                             carritosFiltrados.add(carrito);
-                            precioTotal = precioTotal.add(carrito.getPrecio());
                         }
                     }
 
-                    precioCarrito = findViewById(R.id.precioTotal);
-                    precioCarrito.setText(String.valueOf(precioTotal) + " €");
+
+                    // Calcular el precio total
+                    precioTotal = BigDecimal.valueOf(0);
+                    for (Carrito carrito : carritosFiltrados) {
+                        precioTotal = precioTotal.add(carrito.getPrecio());
+                    }
+
+
+
+                    // Configurar el adaptador del RecyclerView
                     carritoAdapter = new CarritoAdapter(carritosFiltrados, CarritoCompra.this);
                     recyclerView.setAdapter(carritoAdapter);
                 } else {
