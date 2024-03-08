@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+android:layout_width="match_parent"
+android:layout_height="match_parent"
+android:background="@color/white"
+tools:context=".Menu">
+
+    <ImageView
+        android:id="@+id/imageView5"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="18dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:srcCompat="@drawable/titulo" />
+
+    <Button
+        android:id="@+id/pasarPerfil"
+        android:layout_width="50dp"
+        android:layout_height="52dp"
+        android:layout_alignParentRight="true"
+        android:layout_marginTop="120dp"
+        android:layout_marginRight="20dp"
+        android:backgroundTint="@color/white"
+        android:drawableBottom="@drawable/ic_usuario"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <Button
+        android:id="@+id/pasarCarrito"
+        android:layout_width="54dp"
+        android:layout_height="53dp"
+        android:layout_alignParentRight="true"
+        android:layout_marginTop="112dp"
+        android:layout_marginRight="72dp"
+        android:backgroundTint="@color/white"
+        android:drawableBottom="@drawable/ic_carrito"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recyclerView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginTop="160dp">
+
+    </androidx.recyclerview.widget.RecyclerView>
+
+    <EditText
+        android:id="@+id/filtrarProductos"
+        android:layout_width="245dp"
+        android:layout_height="32dp"
+        android:layout_marginLeft="26dp"
+        android:layout_marginTop="122dp"
+        android:background="@drawable/bordes"
+        android:paddingStart="36dp"
+        android:ems="10"
+        android:inputType="text"
+        android:hint="Filtrar" />
+
+    <ImageView
+        android:id="@+id/imageView9"
+        android:layout_width="26dp"
+        android:layout_height="27dp"
+        android:layout_marginLeft="30dp"
+        android:layout_marginTop="125dp"
+        app:srcCompat="@drawable/lupa" />
+
+</RelativeLayout>
